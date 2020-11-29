@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GaestebuchModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__RefactorLog">
+    <Key>
+      <PropertyRef Name="OperationKey" />
+    </Key>
+    <Property Name="OperationKey" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="40" />
+    <Property Name="Vorname" Type="nchar" MaxLength="40" />
+    <Property Name="Password" Type="nchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Eintraege">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IP" Type="nchar" MaxLength="32" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="40" />
+    <Property Name="Besuchsdatum" Type="date" Nullable="false" />
+    <Property Name="Kommentar" Type="text" Nullable="false" />
+    <Property Name="Autorisiert_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Logs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Admin_ID" Type="int" />
+    <Property Name="Aktion" Type="nchar" MaxLength="20" />
+    <Property Name="Zeit" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_Eintraege_Admin">
+    <End Role="Admin" Type="Self.Admin" Multiplicity="0..1" />
+    <End Role="Eintraege" Type="Self.Eintraege" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admin">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Eintraege">
+        <PropertyRef Name="Autorisiert_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Logs_Admin">
+    <End Role="Admin" Type="Self.Admin" Multiplicity="0..1" />
+    <End Role="Logs" Type="Self.Logs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admin">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Logs">
+        <PropertyRef Name="Admin_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GaestebuchModelStoreContainer">
+    <EntitySet Name="__RefactorLog" EntityType="Self.__RefactorLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Eintraege" EntityType="Self.Eintraege" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Eintraege_Admin" Association="Self.FK_Eintraege_Admin">
+      <End Role="Admin" EntitySet="Admin" />
+      <End Role="Eintraege" EntitySet="Eintraege" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Logs_Admin" Association="Self.FK_Logs_Admin">
+      <End Role="Admin" EntitySet="Admin" />
+      <End Role="Logs" EntitySet="Logs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

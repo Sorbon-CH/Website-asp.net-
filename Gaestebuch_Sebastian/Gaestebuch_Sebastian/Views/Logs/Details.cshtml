@@ -1,0 +1,51 @@
+﻿@model Gaestebuch_Sebastian.Models.Logs
+
+@{
+    ViewBag.Title = "Details";
+    if (Session["userID"] == null) { Response.Redirect("/home/index"); }
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Logs</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Aktion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aktion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zeit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zeit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Admin.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Admin.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

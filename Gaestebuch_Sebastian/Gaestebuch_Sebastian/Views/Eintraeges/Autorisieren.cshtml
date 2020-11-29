@@ -1,0 +1,7 @@
+﻿
+@{
+    ViewBag.Title = "Autorisieren";
+}
+
+<h2>Autorisieren</h2>
+@if (Session["userID"] == null) { Response.Redirect("/home/index"); }

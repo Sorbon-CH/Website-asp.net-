@@ -1,0 +1,10 @@
+C:\Users\Sebastian\source\repos\Gaestebuch\Gaestebuch\bin\Debug\Gaestebuch.dacpac
+C:\Users\Sebastian\source\repos\Gaestebuch\Gaestebuch\bin\Debug\Gaestebuch.dll
+C:\Users\Sebastian\source\repos\Gaestebuch\Gaestebuch\bin\Debug\Gaestebuch.pdb
+C:\Users\Sebastian\source\repos\Gaestebuch\Gaestebuch\obj\Debug\Gaestebuch.sqlprojAssemblyReference.cache
+C:\Users\Sebastian\source\repos\Gaestebuch\Gaestebuch\obj\Debug\Gaestebuch.dll
+C:\Users\Sebastian\source\repos\Gaestebuch\Gaestebuch\obj\Debug\Gaestebuch.pdb
+C:\Users\Sebastian\source\repos\Gaestebuch\Gaestebuch\obj\Debug\Model.xml
+C:\Users\Sebastian\source\repos\Gaestebuch\Gaestebuch\obj\Debug\refactor.xml
+C:\Users\Sebastian\source\repos\Gaestebuch\Gaestebuch\obj\Debug\postdeploy.sql
+C:\Users\Sebastian\source\repos\Gaestebuch\Gaestebuch\obj\Debug\predeploy.sql

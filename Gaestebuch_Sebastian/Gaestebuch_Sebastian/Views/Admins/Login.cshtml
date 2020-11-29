@@ -1,0 +1,62 @@
+﻿@model Gaestebuch_Sebastian.Models.Admin
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<div id="login-div">
+    @using (Html.BeginForm("Authorize", "admins", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <table>
+            <tr><td>Login</td></tr>
+
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Name)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.Name)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Vorname)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.Vorname)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.LoginErrorMessage)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.Password)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" name="name" value="login" />
+                    <input type="reset" name="name" value="clear" />
+                </td>
+            </tr>
+            </table>
+            <table>
+                <tr>
+                <td>
+                    <div>
+                       <label class="field-validation-error">@Html.DisplayFor(model => model.LoginErrorMessage) </label>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,69 @@
+﻿@model Gaestebuch_Sebastian.Models.Eintraege
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Eintraege</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @if (Session["userID"] != null)
+        {
+            <dt> @Html.DisplayNameFor(model => model.IP) </dt>
+
+            <dd> @Html.DisplayFor(model => model.IP) </dd>
+        }
+
+
+        <dt>
+            Erstellt von:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Besuchsdatum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Besuchsdatum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kommentar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kommentar)
+        </dd>
+
+        @if (Model.Autorisiert_ID != null)
+        {
+            <dt>
+                Autorisiert von:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Admin.Name) @Html.DisplayFor(model => model.Admin.Vorname)
+            </dd>
+        }
+        else
+        {
+            <p>Autorisieren:</p>
+            @Html.ActionLink("Ja", "Autorisieren", new { id = Model.Id })
+            @Html.ActionLink("Nein", "Delete", new { id = Model.Id })
+
+        }
+    </dl>
+</div>
+<p>
+    @if (Session["userID"] != null) {
+       <p> @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) | </p>
+    }
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Gaestebuch", "Gaestebuch\Gaestebuch.sqlproj", "{C73AFDB0-E4DE-43DF-91E5-635A108D338D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C73AFDB0-E4DE-43DF-91E5-635A108D338D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C73AFDB0-E4DE-43DF-91E5-635A108D338D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C73AFDB0-E4DE-43DF-91E5-635A108D338D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C73AFDB0-E4DE-43DF-91E5-635A108D338D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C73AFDB0-E4DE-43DF-91E5-635A108D338D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C73AFDB0-E4DE-43DF-91E5-635A108D338D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51FC7404-8FDE-4F8E-8572-D4298B8DE14F}
+	EndGlobalSection
+EndGlobal

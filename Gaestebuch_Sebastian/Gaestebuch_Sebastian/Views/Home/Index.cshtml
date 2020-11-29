@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Response.Redirect("/eintraeges/index");
+}
+
+<div>
+    <table>
+        <tr><td>@Html.ActionLink("Login", "Login", "admins")</td></tr>
+        <tr><td>@Html.ActionLink("Einträge", "index", "eintraeges")</td></tr>
+        <tr><td>@Html.ActionLink("Login", "Login", "admins")</td></tr>
+    </table>
+
+</div>
